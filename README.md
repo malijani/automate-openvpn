@@ -12,6 +12,8 @@ This repo contains some openvpn profiles which created by Chauffeur with love.
 
 **Usage :**
 
-just run : `sudo $HOME/OpenVPN/start.exp`
+Just run : `sudo $HOME/OpenVPN/start.exp`
 
-by default US.ovpn profile is in use. you can comment US.ovpn and uncomment DE.ovpn in $HOME/OpenVPN/start.exp file to use DE.ovpn.
+By default US.ovpn profile is in use. You can comment US.ovpn and uncomment DE.ovpn in "$HOME/OpenVPN/start.exp" file to use DE.ovpn.
+
+**Telegram channel : @ipctux**

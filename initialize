@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo "Downloading vpn profiles..."
+
+mkdir $HOME/OpenVPN
+
+repoAddress="https://github.com/virtualdemon/chauffeur-vpn"
+
+which curl 2> /dev/null && curl -s -o $HOME/OpenVPN/{US.ovpn,DE.ovpn} $repoAddress/{US.ovpn,DE.ovpn} || which wget && wget $repoAddress/{US.ovpn,DE.ovpn} -O  $HOME/OpenVPN/{US.ovpn,DE.ovpn}
+
+ 

@@ -16,7 +16,7 @@ Just run : `sudo $HOME/OpenVPN/start.exp`
 
 By default US.ovpn profile is in use. You can comment US.ovpn and uncomment DE.ovpn in "*$HOME/OpenVPN/start.exp*" file to use DE.ovpn.
 
-**Telegram channel : @ipctux**
+**Telegram channel : [@ipctux](https://t.me/ipctux)**
 
 ## common problems!?
 

@@ -36,16 +36,16 @@ for fixing this problem permanently  do follow these instructions :
 	
  2. add 'dns=none' in /etc/NetworkManager/NetworkManager.conf under [main] section :
 	
-	`sudo nano /etc/NetworkManager/NetworkManager.conf`
+	`sudo nano /etc/NetworkManager/NetworkManager.conf`  
 	
-	**[main]
+	**[main]  
 	 dns=none**
 	      
  3. add your dns to /etc/resolv.conf :
 	
-	`sudo nano /etc/resolv.conf`
+	`sudo nano /etc/resolv.conf`  
 	
-	**nameserver 1.1.1.1
+	**nameserver 1.1.1.1  
 	      nameserver 1.0.0.1**
  
  4. restart NetworkManager service :  	      

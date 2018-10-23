@@ -1,11 +1,39 @@
 #!/usr/bin/env bash
 
-echo "Downloading vpn profiles..."
+clear
 
-mkdir $HOME/OpenVPN
+# Define colors
+# Reset
+colorOff='\033[0m'       # Text Reset
+# Regular Colors
+red='\033[0;31m'          # red
+green='\033[0;32m'        # green
+ 
+echo -e "$green Downloading vpn profiles... $colorOff"
 
-repoAddress="https://github.com/virtualdemon/chauffeur-vpn"
+pathToDownload="$HOME/OpenVPN"
 
-which curl 2> /dev/null && curl -s -o $HOME/OpenVPN/{US.ovpn,DE.ovpn} $repoAddress/{US.ovpn,DE.ovpn} || which wget && wget $repoAddress/{US.ovpn,DE.ovpn} -O  $HOME/OpenVPN/{US.ovpn,DE.ovpn}
+repoAddress="https://raw.githubusercontent.com/virtualdemon/chauffeur-vpn/master"
+
+files=(US.ovpn DE.ovpn start.exp)
+
+mkdir -p $pathToDownload
+
+for file in ${files[@]};do
+	echo -e "$green Adding $file $colorOff"
+	which curl 2> /dev/null && curl -s -o $pathToDownload/$file $repoAddress/$file || which wget && wget $repoAddress/$file -O  $pathToDownload/$file
+done
+
+chmod +x "$pathToDownload/start.exp"
+
+
+echo -e "$green Installing needed packages $colorOff"
+
+which apt 2> /dev/null && sudo apt install -y openvpn expect || which pacman 2> /dev/null && sudo pacman -S --noconfirm openvpn expect || which yum 2> /dev/null && sudo yum install -y openvpn expect 
+
+
+echo -e "$green Now you should run: $red sudo $HOME/OpenVPN/start.exp $colorOff"
+
+
 
  
